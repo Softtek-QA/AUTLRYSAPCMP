@@ -1,0 +1,8 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="SAPConnections" locator="/Window[@caption='SAP Logon 730']">
+    <ObjectMapEntry id="ItensConfiguracao" locator="//Control[@caption=&quot;SAP's Advanced Treelist&quot;]" />
+    <ObjectMapEntry id="ListaConexoes" locator="//ListView" />
+    <ObjectMapEntry id="Logon" locator="//PushButton[@caption='Logon']" />
+    <ObjectMapEntry id="SAP s Advanced Treelist" locator="//Control[@caption=&quot;SAP's Advanced Treelist&quot;]" />
+  </ObjectMapEntry>
+</ObjectMap>
