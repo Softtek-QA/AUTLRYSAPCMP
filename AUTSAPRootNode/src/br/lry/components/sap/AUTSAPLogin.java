@@ -1,4 +1,4 @@
-package br.lry.components;
+package br.lry.components.sap;
 
 import com.borland.silktest.jtf.BaseState;
 import com.borland.silktest.jtf.Control;
