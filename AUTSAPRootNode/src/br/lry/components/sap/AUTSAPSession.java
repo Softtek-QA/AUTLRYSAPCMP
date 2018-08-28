@@ -39,7 +39,6 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 
 	@Test
 	public void autStartLoginDefault() {
-		autInitSAPApp();
 		AUT_AGENT_SILK4J.<SapWindow>find("SAP").setActive();
 		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").setText(usuario);
 		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Senha").setText(senha);

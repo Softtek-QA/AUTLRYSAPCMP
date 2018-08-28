@@ -1,10 +1,27 @@
 <ObjectMap version="1">
   <ObjectMapEntry id="SAP" locator="/SapWindow[@automationId='/app/con[0]/ses[0]/wnd[0]']">
+    <ObjectMapEntry id="BarraStatus" locator="//SapStatusbar[@automationId='sbar']" />
     <ObjectMapEntry id="Executar" locator="//SapButton[@automationId='tbar[0]/btn[0]']" />
     <ObjectMapEntry id="InputTransacao" locator="//SapOkCodeField[@automationId='tbar[0]/okcd']" />
     <ObjectMapEntry id="Login" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Senha" locator="//SapTextField[@automationId='usr/pwdRSYST-BCODE']" />
       <ObjectMapEntry id="Usuario" locator="//SapTextField[@automationId='usr/txtRSYST-BNAME']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="MMBE" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="ApenasEstoqueComSaldo" locator="//SapCheckBox[@automationId='usr/chkKZNUL']" />
+      <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtMS_WERKS-LOW']" />
+      <ObjectMapEntry id="DetalhesEstoques" locator="//SapTree[@automationId='usr/cntlCC_CONTAINER/shellcont/shell/shellcont[1]/shell[1]']" />
+      <ObjectMapEntry id="Material" locator="//SapTextField[@automationId='usr/ctxtMS_MATNR-LOW']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="MMBEDetalhesEstoque" locator="//SapGridView[@automationId='shellcont/shell/shellcont[0]/shell']" />
+    <ObjectMapEntry id="ZMM0075" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtS6_WERKS-LOW']" />
+      <ObjectMapEntry id="CentroOnCar" locator="//SapTextField[@automationId='usr/ctxtS0_WERKS-LOW']" />
+      <ObjectMapEntry id="EstoqueOnCar" locator="//SapRadioButton[@automationId='usr/radRB_SELB0']" />
+      <ObjectMapEntry id="EstoqueOnCarComNetCar" locator="//SapRadioButton[@automationId='usr/radRB_SELBA']" />
+      <ObjectMapEntry id="EstoqueTotalCar" locator="//SapRadioButton[@automationId='usr/radRB_SELB6']" />
+      <ObjectMapEntry id="Material" locator="//SapTextField[@automationId='usr/ctxtS6_MATNR-LOW']" />
+      <ObjectMapEntry id="MaterialOnCar" locator="//SapTextField[@automationId='usr/ctxtS0_MATNR-LOW']" />
     </ObjectMapEntry>
   </ObjectMapEntry>
 </ObjectMap>
