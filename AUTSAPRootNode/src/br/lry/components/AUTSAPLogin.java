@@ -12,11 +12,45 @@ import com.microfocus.silktest.jtf.sap.SapButton;
 import com.microfocus.silktest.jtf.sap.SapTextField;
 import com.microfocus.silktest.jtf.sap.SapTree;
 import com.microfocus.silktest.jtf.sap.common.types.VKey;
+
+import junit.framework.TestResult;
+
 import com.borland.silktest.jtf.Desktop;
 import com.borland.silktest.jtf.PushButton;
 
-public class AUTSAPLogin {
+public class AUTSAPLogin extends junit.framework.TestCase{
 	private Desktop desktop = new Desktop();
+
+	@Override
+	protected TestResult createResult() {
+		// TODO Auto-generated method stub
+		return super.createResult();
+	}
+
+
+	@Override
+	protected void runTest() throws Throwable {
+		// TODO Auto-generated method stub
+		baseState();
+		autInitSAPApp();
+		autStartLoginDefault();
+		super.runTest();
+	}
+
+
+	@Override
+	protected void setUp() throws Exception {
+		// TODO Auto-generated method stub
+		super.setUp();
+	}
+
+
+	@Override
+	protected void tearDown() throws Exception {
+		// TODO Auto-generated method stub
+		super.tearDown();
+	}
+
 
 	@Before
 	public void baseState() {
@@ -33,9 +67,10 @@ public class AUTSAPLogin {
 
 	@Test
 	public void autStartLoginDefault() {
-		autInitSAPApp()
+		autInitSAPApp();
+		desktop.<SapWindow>find("SAP").setActive();
 		desktop.<SapTextField>find("SAP.Login.Usuario").setText("51028487");
-		desktop.<SapTextField>find("SAP.Login.Senha").setText("Auto5@2018");
-		desktop.<SapButton>find("VA.Login.Executar").select();
+		desktop.<SapTextField>find("SAP.Login.Senha").setText("Auto5@2020");
+		desktop.<SapButton>find("SAP.Executar").select();
 	}
 }
