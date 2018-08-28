@@ -18,7 +18,7 @@ import junit.framework.TestResult;
 import com.borland.silktest.jtf.Desktop;
 import com.borland.silktest.jtf.PushButton;
 
-public class AUTSAPLogin extends AUTSAPBaseComponent{
+public class AUTSAPSession extends AUTSAPBaseComponent{
 	
 	String usuario = "51028487";
 	String senha = "Auto5@2020";

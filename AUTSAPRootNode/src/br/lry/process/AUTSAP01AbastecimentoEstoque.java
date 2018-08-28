@@ -6,7 +6,7 @@ package br.lry.process;
 import org.junit.Test;
 
 import br.lry.components.sap.AUTSAPBaseComponent;
-import br.lry.components.sap.AUTSAPLogin;
+import br.lry.components.sap.AUTSAPSession;
 
 /**
  * 
@@ -24,7 +24,7 @@ public class AUTSAP01AbastecimentoEstoque extends AUTSAPBaseComponent {
 	 */
 	@Test
 	public void autStartProcess() {
-		AUTSAPLogin login = new AUTSAPLogin();
+		AUTSAPSession login = new AUTSAPSession();
 		login.autStartSAPECQDefault();
 		login.autStartTransaction(transacao);		
 	}
