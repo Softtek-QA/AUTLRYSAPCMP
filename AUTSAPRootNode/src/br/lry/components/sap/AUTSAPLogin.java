@@ -21,37 +21,6 @@ import com.borland.silktest.jtf.PushButton;
 public class AUTSAPLogin extends junit.framework.TestCase{
 	private Desktop desktop = new Desktop();
 
-	@Override
-	protected TestResult createResult() {
-		// TODO Auto-generated method stub
-		return super.createResult();
-	}
-
-
-	@Override
-	protected void runTest() throws Throwable {
-		// TODO Auto-generated method stub
-		baseState();
-		autInitSAPApp();
-		autStartLoginDefault();
-		super.runTest();
-	}
-
-
-	@Override
-	protected void setUp() throws Exception {
-		// TODO Auto-generated method stub
-		super.setUp();
-	}
-
-
-	@Override
-	protected void tearDown() throws Exception {
-		// TODO Auto-generated method stub
-		super.tearDown();
-	}
-
-
 	@Before
 	public void baseState() {
 		BaseState baseState = new BaseState();
