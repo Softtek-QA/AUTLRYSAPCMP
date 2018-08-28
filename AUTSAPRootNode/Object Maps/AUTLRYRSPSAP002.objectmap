@@ -1,6 +1,7 @@
 <ObjectMap version="1">
   <ObjectMapEntry id="SAP" locator="/SapWindow[@automationId='/app/con[0]/ses[0]/wnd[0]']">
     <ObjectMapEntry id="Executar" locator="//SapButton[@automationId='tbar[0]/btn[0]']" />
+    <ObjectMapEntry id="InputTransacao" locator="//SapOkCodeField[@automationId='tbar[0]/okcd']" />
     <ObjectMapEntry id="Login" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Senha" locator="//SapTextField[@automationId='usr/pwdRSYST-BCODE']" />
       <ObjectMapEntry id="Usuario" locator="//SapTextField[@automationId='usr/txtRSYST-BNAME']" />
