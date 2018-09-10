@@ -3,6 +3,8 @@ package br.lry.components.sap;
 import com.borland.silktest.jtf.BaseState;
 import com.borland.silktest.jtf.Control;
 
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
 import com.borland.silktest.jtf.win32.ListView;
@@ -49,5 +51,14 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 		baseState();
 		autInitSAPApp();
 		autStartLoginDefault();
+	}
+	
+	public void autSAPLogout() {
+		try {
+			java.lang.Runtime.getRuntime().exec("taskkill /f /t im sap*");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
