@@ -7,6 +7,12 @@
       <ObjectMapEntry id="Senha" locator="//SapTextField[@automationId='usr/pwdRSYST-BCODE']" />
       <ObjectMapEntry id="Usuario" locator="//SapTextField[@automationId='usr/txtRSYST-BNAME']" />
     </ObjectMapEntry>
+    <ObjectMapEntry id="ME21N" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="Senha" locator="//SapTextField[@automationId='usr/pwdRSYST-BCODE']" />
+      <ObjectMapEntry id="Usuario" locator="//SapTextField[@automationId='usr/txtRSYST-BNAME']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="ME21NTabCondicoes" locator="//SapTab[@automationId='usr/subSUB0:SAPLMEGUI:0013/subSUB1:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEGUI:1102/tabsHEADER_DETAIL/tabpTABHDT3']" />
+    <ObjectMapEntry id="ME21NTabLMB" locator="//SapTab[@automationId='usr/subSUB0:SAPLMEGUI:0013/subSUB1:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEGUI:1102/tabsHEADER_DETAIL/tabpTABHDT1']" />
     <ObjectMapEntry id="MMBE" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="ApenasEstoqueComSaldo" locator="//SapCheckBox[@automationId='usr/chkKZNUL']" />
       <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtMS_WERKS-LOW']" />

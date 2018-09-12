@@ -55,7 +55,7 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 	
 	public void autSAPLogout() {
 		try {
-			java.lang.Runtime.getRuntime().exec("taskkill /f /t im sap*");
+			java.lang.Runtime.getRuntime().exec("taskkill /f /t /im sap*");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
