@@ -11,8 +11,10 @@ import com.borland.silktest.jtf.win32.ListView;
 import com.borland.silktest.jtf.common.types.ClickType;
 import com.microfocus.silktest.jtf.sap.SapWindow;
 import com.microfocus.silktest.jtf.sap.SapButton;
+import com.microfocus.silktest.jtf.sap.SapRadioButton;
 import com.microfocus.silktest.jtf.sap.SapTextField;
 import com.microfocus.silktest.jtf.sap.SapTree;
+import com.microfocus.silktest.jtf.sap.SapUserArea;
 import com.microfocus.silktest.jtf.sap.common.types.VKey;
 
 import junit.framework.TestResult;
@@ -36,15 +38,36 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 	public void autInitSAPApp() {		
 		AUT_AGENT_SILK4J.<Control>find("SAPConnections.ItensConfiguracao").textClick("Conexões");
 		AUT_AGENT_SILK4J.<ListView>find("SAPConnections.ListaConexoes").select("LEROY-ECQ");
-		AUT_AGENT_SILK4J.<PushButton>find("SAPConnections.Logon").click();
+		AUT_AGENT_SILK4J.<PushButton>find("SAPConnections.Logon").click();				
 	}
 
-	@Test
+	
 	public void autStartLoginDefault() {
+		//AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").waitForProperty("Enabled", true,40000);
 		AUT_AGENT_SILK4J.<SapWindow>find("SAP").setActive();
+		AUT_AGENT_SILK4J.<SapWindow>find("SAP").maximize();
 		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").setText(usuario);
 		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Senha").setText(senha);
 		AUT_AGENT_SILK4J.<SapButton>find("SAP.Executar").select();
+		
+		if(AUT_AGENT_SILK4J.<SapWindow>find("SAP").exists("OpcoesMultiplasConexoes",6000)) {
+			AUT_AGENT_SILK4J.<SapRadioButton>find("SAP.OpcoesMultiplasConexoes.Multiconexao").select();
+			AUT_AGENT_SILK4J.<SapWindow>find("SAP.OpcoesMultiplasConexoes").sendVKey(VKey.ENTER);
+		}
+	}
+	
+	public void autStartLogin(String usuario,String senha) {
+		//AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").waitForProperty("Enabled", true,40000);
+		AUT_AGENT_SILK4J.<SapWindow>find("SAP").setActive();
+		AUT_AGENT_SILK4J.<SapWindow>find("SAP").maximize();
+		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").setText(usuario);
+		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Senha").setText(senha);
+		AUT_AGENT_SILK4J.<SapButton>find("SAP.Executar").select();
+		
+		if(AUT_AGENT_SILK4J.<SapWindow>find("SAP").exists("OpcoesMultiplasConexoes",6000)) {
+			AUT_AGENT_SILK4J.<SapRadioButton>find("SAP.OpcoesMultiplasConexoes.Multiconexao").select();
+			AUT_AGENT_SILK4J.<SapWindow>find("SAP.OpcoesMultiplasConexoes").sendVKey(VKey.ENTER);
+		}
 	}
 	
 	public void autStartSAPECQDefault() {
@@ -55,7 +78,10 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 	
 	public void autSAPLogout() {
 		try {
+			autStartTransaction("/n");
+			
 			java.lang.Runtime.getRuntime().exec("taskkill /f /t /im sap*");
+			com.borland.silktest.jtf.Utils.sleep(8000);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

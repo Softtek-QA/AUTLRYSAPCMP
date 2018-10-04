@@ -13,6 +13,7 @@
     </ObjectMapEntry>
     <ObjectMapEntry id="ME21NTabCondicoes" locator="//SapTab[@automationId='usr/subSUB0:SAPLMEGUI:0013/subSUB1:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEGUI:1102/tabsHEADER_DETAIL/tabpTABHDT3']" />
     <ObjectMapEntry id="ME21NTabLMB" locator="//SapTab[@automationId='usr/subSUB0:SAPLMEGUI:0013/subSUB1:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEGUI:1102/tabsHEADER_DETAIL/tabpTABHDT1']" />
+    <ObjectMapEntry id="ME21NTipoPedido" locator="//SapComboBox[@automationId='usr/subSUB0:SAPLMEGUI:0016/subSUB0:SAPLMEGUI:0030/subSUB1:SAPLMEGUI:1105/cmbMEPO_TOPLINE-BSART']" />
     <ObjectMapEntry id="MMBE" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="ApenasEstoqueComSaldo" locator="//SapCheckBox[@automationId='usr/chkKZNUL']" />
       <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtMS_WERKS-LOW']" />
@@ -20,6 +21,9 @@
       <ObjectMapEntry id="Material" locator="//SapTextField[@automationId='usr/ctxtMS_MATNR-LOW']" />
     </ObjectMapEntry>
     <ObjectMapEntry id="MMBEDetalhesEstoque" locator="//SapGridView[@automationId='shellcont/shell/shellcont[0]/shell']" />
+    <ObjectMapEntry id="OpcoesMultiplasConexoes" locator="//SapWindow[@automationId='/app/con[0]/ses[0]/wnd[1]']">
+      <ObjectMapEntry id="Multiconexao" locator="//SapRadioButton[@automationId='usr/radMULTI_LOGON_OPT2']" />
+    </ObjectMapEntry>
     <ObjectMapEntry id="ZMM0075" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtS6_WERKS-LOW']" />
       <ObjectMapEntry id="CentroOnCar" locator="//SapTextField[@automationId='usr/ctxtS0_WERKS-LOW']" />

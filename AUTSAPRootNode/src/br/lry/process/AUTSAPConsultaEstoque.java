@@ -73,8 +73,7 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 	public Integer autGetStorageMaterial(String loja,String material) {
 		try {
 			autSAPLogout();
-			com.borland.silktest.jtf.Utils.sleep(4000);
-			AUT_AGENT_SILK4J.executeBaseState(AUT_AGENT_SILK4J_CONFIGURATION);
+			autStartLoginDefault();
 			java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
 			parametros.put("AUT_CENTRO", loja);
 			parametros.put("AUT_MATERIAL",material);

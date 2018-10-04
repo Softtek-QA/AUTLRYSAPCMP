@@ -14,6 +14,10 @@
       <list/>
     </entry>
     <entry>
+      <string>OPT_TRUELOG_SCREENSHOT_MODE</string>
+      <int>2</int>
+    </entry>
+    <entry>
       <string>OPT_ASSET_NAMESPACE</string>
       <string>AUTSAPRootNode</string>
     </entry>
