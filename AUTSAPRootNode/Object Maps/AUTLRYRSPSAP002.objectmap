@@ -24,6 +24,19 @@
     <ObjectMapEntry id="OpcoesMultiplasConexoes" locator="//SapWindow[@automationId='/app/con[0]/ses[0]/wnd[1]']">
       <ObjectMapEntry id="Multiconexao" locator="//SapRadioButton[@automationId='usr/radMULTI_LOGON_OPT2']" />
     </ObjectMapEntry>
+    <ObjectMapEntry id="Popup" locator="//SapWindow[@automationId='/app/con[0]/ses[0]/wnd[1]']">
+      <ObjectMapEntry id="BotaoCancelar" locator="//SapButton[@automationId='usr/btnBUTTON_3']" />
+      <ObjectMapEntry id="BotaoConfirmar" locator="//SapButton[@automationId='tbar[0]/btn[0]']" />
+      <ObjectMapEntry id="BotaoNao" locator="//SapButton[@automationId='usr/btnBUTTON_2']" />
+      <ObjectMapEntry id="BotaoSim" locator="//SapButton[@automationId='usr/btnBUTTON_1']" />
+      <ObjectMapEntry id="DadosSaidaOutput" locator="//SapGridView[@automationId='usr/cntlGRID1/shellcont/shell']" />
+      <ObjectMapEntry id="Mensagens" locator="//BrowserWindow">
+        <ObjectMapEntry id="CriarOrdemTransporte" locator="//body[@Text='Você clicou em*Criar OT*']" />
+        <ObjectMapEntry id="CriarRemessas" locator="//body[@Text='Você clicou em*Criar Remessa*Deseja Proseguir*']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="MSGCriarRemessa" locator="//SapLabel[@automationId='Você clicou em ?Criar Remessa?. Deseja Proseguir?']" />
+      <ObjectMapEntry id="RemessaGeradaOutput" locator="//SapGridView[@automationId='usr/cntlGRID1/shellcont/shell']" />
+    </ObjectMapEntry>
     <ObjectMapEntry id="ZMM0075" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtS6_WERKS-LOW']" />
       <ObjectMapEntry id="CentroOnCar" locator="//SapTextField[@automationId='usr/ctxtS0_WERKS-LOW']" />
@@ -33,5 +46,15 @@
       <ObjectMapEntry id="Material" locator="//SapTextField[@automationId='usr/ctxtS6_MATNR-LOW']" />
       <ObjectMapEntry id="MaterialOnCar" locator="//SapTextField[@automationId='usr/ctxtS0_MATNR-LOW']" />
     </ObjectMapEntry>
+    <ObjectMapEntry id="ZOSDGCP" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="DataFinalPedido" locator="//SapTextField[@automationId='usr/ctxtS_DATA-HIGH']" />
+      <ObjectMapEntry id="DataInicialPedido" locator="//SapTextField[@automationId='usr/ctxtS_DATA-LOW']" />
+      <ObjectMapEntry id="Loja" locator="//SapTextField[@automationId='usr/ctxtS_LOJA-LOW']" />
+      <ObjectMapEntry id="MenusLaterais" locator="//SapTree[@automationId='usr/cntlTREE_CONTAINER/shellcont/shell/shellcont[0]/shell']" />
+      <ObjectMapEntry id="Pedido" locator="//SapTextField[@automationId='usr/txtS_PEDIDO-LOW']" />
+      <ObjectMapEntry id="TabelasRegistros" locator="//SapGridView[@automationId='usr/cntlTREE_CONTAINER/shellcont/shell/shellcont[1]/shell/shellcont[0]/shell']" />
+      <ObjectMapEntry id="TipoPedido" locator="//SapTextField[@automationId='usr/txtS_AUART-LOW']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="ZOSDGCPBotaoExecutar" locator="//SapButton[@automationId='tbar[1]/btn[8]']" />
   </ObjectMapEntry>
 </ObjectMap>

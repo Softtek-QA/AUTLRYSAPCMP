@@ -1,0 +1,17 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="SAPMenus" locator="/SapWindow[@automationId='/app/con[0]/ses[1]/wnd[0]']">
+    <ObjectMapEntry id="0001MenuOrdemTransporte" locator="//SapMenu[@automationId='mbar/menu[0]/menu[5]']" />
+    <ObjectMapEntry id="001SubMenu0001ConfirmarBackground" locator="//SapButton[@automationId='tbar[0]/btn[11]']" />
+    <ObjectMapEntry id="BotaoSalvar" locator="//SapButton[@automationId='tbar[1]/btn[6]']" />
+    <ObjectMapEntry id="CheckConfirmarOrdem" locator="//SapCheckBox[@automationId='usr/chkLTAP-PQUIT']" />
+    <ObjectMapEntry id="ConfirmacaoVisivel" locator="//SapMenu[@automationId='mbar/menu[0]/menu[4]']" />
+    <ObjectMapEntry id="IrPara" locator="//SapMenu[@caption='Ir para']" />
+    <ObjectMapEntry id="OrdemTransporte" locator="//SapMenu[@caption='Ordem de transporte']" />
+    <ObjectMapEntry id="Processar" locator="//SapMenu[@caption='Processar']" />
+    <ObjectMapEntry id="Sistemas" locator="//SapMenu[@caption='Sistema']" />
+    <ObjectMapEntry id="Suplementos" locator="//SapMenu[@caption='Suplementos']" />
+    <ObjectMapEntry id="wnd 1" locator="//SapWindow[@automationId='/app/con[0]/ses[1]/wnd[1]']">
+      <ObjectMapEntry id="btnSPOP-OPTION1" locator="//SapButton[@automationId='usr/btnSPOP-OPTION1']" />
+    </ObjectMapEntry>
+  </ObjectMapEntry>
+</ObjectMap>

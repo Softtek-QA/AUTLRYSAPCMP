@@ -36,7 +36,7 @@ public class AUTSAP01AbastecimentoEstoque extends AUTSAPSession {
 	
 	
 	@Test
-	public void autStartProcess() {
+	public void autStartProcessZCMA() {
 		
 		
 		autStartSAPECQDefault();
@@ -44,6 +44,7 @@ public class AUTSAP01AbastecimentoEstoque extends AUTSAPSession {
 		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
 		java.util.List<AUTSapItemLoja> itemLoja = new java.util.ArrayList<AUTSapItemLoja>();
 		AUTME21N transPedido  = new AUTME21N();				
+		
 		parametros.put("USER_SAP", "51028487");
 		parametros.put("PWD_SAP", "Auto5@2020");
 		parametros.put("INIT_TRANSACTION", true);
