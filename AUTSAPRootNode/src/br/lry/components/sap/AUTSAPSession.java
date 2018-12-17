@@ -24,12 +24,24 @@ import com.borland.silktest.jtf.PushButton;
 import com.borland.silktest.jtf.Window;
 
 public class AUTSAPSession extends AUTSAPBaseComponent{
-
 	String usuario = "51028487";
 	String senha = "Auto5@2020";
 
+	public void autSyncStateProcessExecution() {
+		if(autGetExecutionMonitor()!=null) {
+			System.out.println("AUT INFO : SAP SYNC STATE PROCESS EXECUTION");
+			autGetExecutionMonitor().autProcessExecution();
+		}
+	}
 
+	public void autSetExecutionMonitor(IAUTSAPProcessExecution excMonitor) {
+		prcMonitor = excMonitor;
+	}
 
+	public IAUTSAPProcessExecution autGetExecutionMonitor() {
+		return prcMonitor;
+	}
+	
 	public enum AUT_SAP_SESSIONS_ACTIVE_LOCATIONS_SLK{
 		SESSION1,
 		SESSION2,
@@ -81,13 +93,15 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 
 
 	public void autStartLoginDefault() {
+		autInitSAPApp();
 		AUT_AGENT_SILK4J.exists("SAP", 1000 * 180);
 		
 		AUT_AGENT_SILK4J.<SapWindow>find("SAP").setActive();
 		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").setText(usuario);
 		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Senha").setText(senha);
+		
 		AUT_AGENT_SILK4J.<SapButton>find("SAP.Executar").select();
-
+		
 		if(AUT_AGENT_SILK4J.<SapWindow>find("SAP").exists("OpcoesMultiplasConexoes",6000)) {
 			AUT_AGENT_SILK4J.<SapRadioButton>find("SAP.OpcoesMultiplasConexoes.Multiconexao").select();
 			AUT_AGENT_SILK4J.<SapWindow>find("SAP.OpcoesMultiplasConexoes").sendVKey(VKey.ENTER);
@@ -95,6 +109,29 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 	
 	}
 
+	
+	public void autStartLoginDefault(IAUTSAPProcessExecution processoMonitor) {
+		processoMonitor.autInitProcess();
+		AUT_AGENT_SILK4J.exists("SAP", 1000 * 180);
+		processoMonitor.autParallelProcess();
+		AUT_AGENT_SILK4J.<SapWindow>find("SAP").setActive();
+		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").setText(usuario);
+		processoMonitor.autProcessExecution();
+		AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Senha").setText(senha);
+		AUT_AGENT_SILK4J.<SapButton>find("SAP.Executar").select();
+		processoMonitor.autProcessExecution();
+		
+		if(AUT_AGENT_SILK4J.<SapWindow>find("SAP").exists("OpcoesMultiplasConexoes",6000)) {
+			processoMonitor.autProcessExecution();
+			AUT_AGENT_SILK4J.<SapRadioButton>find("SAP.OpcoesMultiplasConexoes.Multiconexao").select();
+			processoMonitor.autProcessExecution();
+			AUT_AGENT_SILK4J.<SapWindow>find("SAP.OpcoesMultiplasConexoes").sendVKey(VKey.ENTER);
+			processoMonitor.autProcessExecution();
+		}
+	
+		processoMonitor.autEndProcess();
+	}
+	
 	public void autStartLogin(String usuario,String senha) {
 		//AUT_AGENT_SILK4J.<SapTextField>find("SAP.Login.Usuario").waitForProperty("Enabled", true,40000);
 		AUT_AGENT_SILK4J.<SapWindow>find("SAP").setActive();
@@ -117,31 +154,8 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 
 	public void autSAPLogout() {
 		try {
-
-			boolean sapVisible = AUT_AGENT_SILK4J.exists("SAP",8000);
-			
-			
-			if(sapVisible) {
-				System.out.println("AUT SAP : LOGOUT SENDO EXECUTADO : EXISTE UMA  INSTANCIA DO SAP EM EXECUCAO");
-				
-				autStartTransaction("/n");
-
-				/**
-				if(sapVisible) {
-					AUT_AGENT_SILK4J.<SapWindow>find("SAP").closeSynchron();
-				}
-				
-				if(sapConsole) {
-					AUT_AGENT_SILK4J.<Window>find("SAPConnections").closeSynchron();
-				}
-				**/
-				
-				java.lang.Runtime.getRuntime().exec("taskkill /f /t /im sap*");
-				com.borland.silktest.jtf.Utils.sleep(8000);
-			}
-			else {
-				System.out.println("AUT SAP : LOGOUT NAO EXECUTADO : NAO HA INSTANCIAS DO SAP EM EXECUCAO");
-			}
+			java.lang.Runtime.getRuntime().exec("cmd /c taskkill /f /t /im sap*");
+			com.borland.silktest.jtf.Utils.sleep(5000);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

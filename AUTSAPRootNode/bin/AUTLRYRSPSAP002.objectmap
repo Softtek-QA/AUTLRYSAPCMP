@@ -37,6 +37,13 @@
       <ObjectMapEntry id="MSGCriarRemessa" locator="//SapLabel[@automationId='Você clicou em ?Criar Remessa?. Deseja Proseguir?']" />
       <ObjectMapEntry id="RemessaGeradaOutput" locator="//SapGridView[@automationId='usr/cntlGRID1/shellcont/shell']" />
     </ObjectMapEntry>
+    <ObjectMapEntry id="VF04" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="DocumentoSD" locator="//SapTextField[@automationId='usr/ctxtS_VBELN-LOW']" />
+      <ObjectMapEntry id="FaturasPedendes" locator="//SapGridView[@automationId='usr/cntlGRID1/shellcont/shell']" />
+      <ObjectMapEntry id="ItemFaturadoCheckPoint" locator="//SapTitlebar[@automationId='titl' and @caption='Processar lista de documentos de faturamento']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="VF04BotaoExecutar" locator="//SapButton[@automationId='tbar[1]/btn[8]']" />
+    <ObjectMapEntry id="VF04BotaoFaturaIndividual" locator="//SapButton[@automationId='tbar[1]/btn[18]']" />
     <ObjectMapEntry id="ZMM0075" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtS6_WERKS-LOW']" />
       <ObjectMapEntry id="CentroOnCar" locator="//SapTextField[@automationId='usr/ctxtS0_WERKS-LOW']" />

@@ -29,7 +29,7 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 	public AUTMMBE autGetTransactionMMBE(String loja,String material) {
 		try {
 			System.out.println("SAP : PROCESS : ERRO CONSULTA DE ESTOQUE DO MATERIAL");
-			
+
 			return new AUTMMBE();
 		}
 		catch(java.lang.Exception e) {
@@ -39,7 +39,7 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Retorna transação ZMM0075 para consulta de estoque
 	 * 
@@ -56,11 +56,11 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 			System.out.println("SAP: PROCESS: ERROR: CONSULTA DE ESTOQUE DO MATERIAL");
 			System.out.println(e.getMessage());
 			e.printStackTrace();
-			
+
 			return null;
 		}
 	}
-	
+
 	/**
 	 * 
 	 * Executa procedimentos para consulta de estoque
@@ -72,17 +72,33 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 	 */
 	public Integer autGetStorageMaterial(String loja,String material) {
 		try {
-			autSAPLogout();
+			AUT_AGENT_SILK4J = new com.borland.silktest.jtf.Desktop();
+			AUT_AGENT_SILK4J_CONFIGURATION = new com.borland.silktest.jtf.BaseState("sap.settings");
+			AUT_AGENT_SILK4J.executeBaseState(AUT_AGENT_SILK4J_CONFIGURATION);
+			//autSAPLogout();
 			autStartLoginDefault();
+
 			java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
 			parametros.put("AUT_CENTRO", loja);
 			parametros.put("AUT_MATERIAL",material);
 			Integer totalMMBE = 0;
-			Integer totalZMM0075 = Integer.parseInt(autGetTransactionZMM0075(loja, material).autExecZMM0075(parametros).get("AUT_ESTOQUE").toString());
+			Integer totalZMM0075 = 0;
 
-		
+			if(prcMonitor!=null) {
+				totalZMM0075 = Integer.parseInt(autGetTransactionZMM0075(loja, material).autExecZMM0075(parametros,autGetExecutionMonitor()).get("AUT_ESTOQUE").toString());
+			}
+			else {
+				totalZMM0075 = Integer.parseInt(autGetTransactionZMM0075(loja, material).autExecZMM0075(parametros).get("AUT_ESTOQUE").toString());	
+			}
+
+
 			if(totalZMM0075 == 0) {
-				//totalMMBE = Integer.parseInt(autGetTransactionMMBE(loja, material).autExecMMBE(parametros).get("AUT_ESTOQUE").toString());				
+				if(prcMonitor!=null) {
+					totalMMBE = Integer.parseInt(autGetTransactionMMBE(loja, material).autExecMMBE(parametros,prcMonitor).get("AUT_ESTOQUE").toString());				
+				}
+				else {
+					totalMMBE = Integer.parseInt(autGetTransactionMMBE(loja, material).autExecMMBE(parametros).get("AUT_ESTOQUE").toString());									
+				}
 			}		
 			autSAPLogout();
 			return (totalZMM0075 > 0 ? totalZMM0075 : (totalMMBE > 0 ? totalMMBE : 0));
@@ -91,7 +107,7 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 			System.out.println("SAP: PROCESSO: ERRO: CONSULTA QUANTIDADE EM ESTOQUE");
 			System.out.println(e.getMessage());
 			e.printStackTrace();
-			
+
 			return 0;
 		}
 	}
