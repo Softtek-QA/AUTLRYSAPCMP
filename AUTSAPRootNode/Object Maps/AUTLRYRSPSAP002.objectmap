@@ -3,10 +3,25 @@
     <ObjectMapEntry id="BarraStatus" locator="//SapStatusbar[@automationId='sbar']" />
     <ObjectMapEntry id="Executar" locator="//SapButton[@automationId='tbar[0]/btn[0]']" />
     <ObjectMapEntry id="InputTransacao" locator="//SapOkCodeField[@automationId='tbar[0]/okcd']" />
+    <ObjectMapEntry id="LM01ProcessarSM" locator="//SapButton[@automationId='usr/btnTEXT2']" />
+    <ObjectMapEntry id="LM01SaidaMercadoria" locator="//SapButton[@automationId='usr/btnTEXT1']" />
+    <ObjectMapEntry id="LM01SaidaMercOT" locator="//SapButton[@automationId='usr/btnTEXT4']" />
     <ObjectMapEntry id="Login" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Senha" locator="//SapTextField[@automationId='usr/pwdRSYST-BCODE']" />
       <ObjectMapEntry id="Usuario" locator="//SapTextField[@automationId='usr/txtRSYST-BNAME']" />
     </ObjectMapEntry>
+    <ObjectMapEntry id="LRFMD" locator="//SapUserArea[@automationId='usr']" />
+    <ObjectMapEntry id="LRFMDBotaoEditar" locator="//SapButton[@automationId='tbar[1]/btn[25]']" />
+    <ObjectMapEntry id="LRFMDMenuSelecao" locator="//SapMenu[@automationId='mbar/menu[3]']">
+      <ObjectMapEntry id="MenuPorConteudo" locator="//SapMenu[@automationId='mbar/menu[3]/menu[0]' and @caption='Por conteúdo...']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="LRFMDNovasEntradasUsuario" locator="//SapButton[@automationId='tbar[1]/btn[5]']" />
+    <ObjectMapEntry id="LRFMDOpcoesSelecao" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="BotaoSelecionar" locator="//SapButton[@caption='Selecionar']" />
+      <ObjectMapEntry id="CxaUsuario" locator="//SapTextField[@automationId='usr/tblSAPLSVIXTCTRL_QUERY/txtQUERY_TAB-BUFFER[3,0]']" />
+      <ObjectMapEntry id="Tabela" locator="//SapTable[@automationId='usr/tblSAPLSVIXTCTRL_SEL_FLDS']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="LRFMDTabelaAtribuicaoUsuarios" locator="//SapTable[@automationId='usr/tblSAPL0L16TCTRL_LRF_WKQU']" />
     <ObjectMapEntry id="ME21N" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Senha" locator="//SapTextField[@automationId='usr/pwdRSYST-BCODE']" />
       <ObjectMapEntry id="Usuario" locator="//SapTextField[@automationId='usr/txtRSYST-BNAME']" />
@@ -44,6 +59,16 @@
     </ObjectMapEntry>
     <ObjectMapEntry id="VF04BotaoExecutar" locator="//SapButton[@automationId='tbar[1]/btn[8]']" />
     <ObjectMapEntry id="VF04BotaoFaturaIndividual" locator="//SapButton[@automationId='tbar[1]/btn[18]']" />
+    <ObjectMapEntry id="VL06ListaRemessasGeral" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="CentroVenda" locator="//SapTextField[@automationId='usr/ctxtIT_VTWEG-LOW']" />
+      <ObjectMapEntry id="DataFinal" locator="//SapTextField[@automationId='usr/ctxtIT_WADAT-HIGH']" />
+      <ObjectMapEntry id="DataInicial" locator="//SapTextField[@automationId='usr/ctxtIT_WADAT-LOW']" />
+      <ObjectMapEntry id="OrganizaoVendas" locator="//SapTextField[@automationId='usr/ctxtIT_VKORG-LOW']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="VL06ListaRemessasSaidaMercadoria" locator="//SapButton[@caption='Lista remessas entrega']" />
+    <ObjectMapEntry id="VL06MenuFuncoesSubSequentes" locator="//SapMenu[@automationId='mbar/menu[4]' and @caption='Funções subsequentes']">
+      <ObjectMapEntry id="RegistrarSaidaMercadoria" locator="//SapMenu[@automationId='mbar/menu[4]/menu[9]' and @caption='Registrar saída de mercadorias']" />
+    </ObjectMapEntry>
     <ObjectMapEntry id="ZMM0075" locator="//SapUserArea[@automationId='usr']">
       <ObjectMapEntry id="Centro" locator="//SapTextField[@automationId='usr/ctxtS6_WERKS-LOW']" />
       <ObjectMapEntry id="CentroOnCar" locator="//SapTextField[@automationId='usr/ctxtS0_WERKS-LOW']" />

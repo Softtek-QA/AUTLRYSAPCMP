@@ -21,5 +21,9 @@
       <string>OPT_ASSET_NAMESPACE</string>
       <string>AUTSAPRootNode</string>
     </entry>
+    <entry>
+      <string>OPT_SHOW_PLAYBACK_STATUS_DIALOG</string>
+      <boolean>false</boolean>
+    </entry>
   </agentOptions>
 </recorderProject>

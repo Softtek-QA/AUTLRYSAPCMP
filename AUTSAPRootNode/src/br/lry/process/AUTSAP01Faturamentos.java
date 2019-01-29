@@ -41,6 +41,9 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 	public void autFaturarPedido(java.util.HashMap<String,Object> prm,IAUTSAPProcessExecution process) {
 		AUTZOSDGCP transPedido  = new AUTZOSDGCP();	
 		AUTVF04 transFat = new AUTVF04();
+		AUTSAPAtualizacaoUsuarioRF userUpdateRF = new AUTSAPAtualizacaoUsuarioRF();
+		AUTSAPConferenciaPedido confPedido = new AUTSAPConferenciaPedido();
+		
 		
 		try {
 			transPedido.autSAPLogout();
@@ -59,6 +62,16 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 		AUT_ORDEM_TRANSPORTE = transPedido.AUT_NUMERO_ORDEM_TRANSPORTE;
 		
 		transPedido.autSAPLogout();
+		
+		if(prm.containsKey("AUT_DOC_FORNECIMENTO")) {
+			prm.remove("AUT_DOC_FORNECIMENTO");
+			prm.put("AUT_DOC_FORNECIMENTO",AUT_DOCUMENTO_REMESSA);			
+		}
+		
+		
+		userUpdateRF.autAtualizaDadosUsuarioRF(prm);
+		confPedido.autStartConf(prm);
+		
 		
 		transFat.autIniFaturamento(prm);
 		AUT_DOCUMENTO_FATURADO = transFat.AUT_NUMERO_FATURA;

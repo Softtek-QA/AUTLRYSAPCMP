@@ -91,7 +91,6 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 				totalZMM0075 = Integer.parseInt(autGetTransactionZMM0075(loja, material).autExecZMM0075(parametros).get("AUT_ESTOQUE").toString());	
 			}
 
-
 			if(totalZMM0075 == 0) {
 				if(prcMonitor!=null) {
 					totalMMBE = Integer.parseInt(autGetTransactionMMBE(loja, material).autExecMMBE(parametros,prcMonitor).get("AUT_ESTOQUE").toString());				
@@ -99,7 +98,8 @@ public class AUTSAPConsultaEstoque extends AUTSAPSession {
 				else {
 					totalMMBE = Integer.parseInt(autGetTransactionMMBE(loja, material).autExecMMBE(parametros).get("AUT_ESTOQUE").toString());									
 				}
-			}		
+			}
+			
 			autSAPLogout();
 			return (totalZMM0075 > 0 ? totalZMM0075 : (totalMMBE > 0 ? totalMMBE : 0));
 		}

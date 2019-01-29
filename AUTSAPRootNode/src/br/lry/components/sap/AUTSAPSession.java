@@ -155,8 +155,9 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 	public void autSAPLogout() {
 		try {
 			java.lang.Runtime.getRuntime().exec("cmd /c taskkill /f /t /im sap*");
-			com.borland.silktest.jtf.Utils.sleep(5000);
+			com.borland.silktest.jtf.Utils.sleep(15000);
 		} catch (IOException e) {
+			com.borland.silktest.jtf.Utils.sleep(15000);
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
