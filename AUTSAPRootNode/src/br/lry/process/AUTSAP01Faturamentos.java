@@ -63,15 +63,25 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 		
 		transPedido.autSAPLogout();
 		
-		if(prm.containsKey("AUT_DOC_FORNECIMENTO")) {
-			prm.remove("AUT_DOC_FORNECIMENTO");
-			prm.put("AUT_DOC_FORNECIMENTO",AUT_DOCUMENTO_REMESSA);			
-		}
+		prm.remove("AUT_DOC_FORNECIMENTO");
+		prm.put("AUT_DOC_FORNECIMENTO",AUT_DOCUMENTO_REMESSA);			
 		
+		try {
+			transPedido.autSAPLogout();
+		}
+		catch(java.lang.Exception e) {
+			
+		}
 		
 		userUpdateRF.autAtualizaDadosUsuarioRF(prm);
 		confPedido.autStartConf(prm);
 		
+		try {
+			transPedido.autSAPLogout();
+		}
+		catch(java.lang.Exception e) {
+			
+		}
 		
 		transFat.autIniFaturamento(prm);
 		AUT_DOCUMENTO_FATURADO = transFat.AUT_NUMERO_FATURA;
