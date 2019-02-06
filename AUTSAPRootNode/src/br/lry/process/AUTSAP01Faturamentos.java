@@ -72,8 +72,11 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 		catch(java.lang.Exception e) {
 			
 		}
-		
-		userUpdateRF.autAtualizaDadosUsuarioRF(prm);
+
+		userUpdateRF.autSetExecutionMonitor(process);
+		confPedido.autSetExecutionMonitor(process);
+
+		userUpdateRF.autInitAtualizacao(prm);
 		confPedido.autStartConf(prm);
 		
 		try {
