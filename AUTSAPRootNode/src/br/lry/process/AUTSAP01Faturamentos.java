@@ -37,6 +37,40 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 		autStartTransaction(transacao);				
 	}
 	
+	/**
+	 * 
+	 * Faturamento ZOSD_GCP
+	 * 
+	 * @param parametros - Parametros de configuração do processo de negócio
+	 * 
+	 */
+	public void autIniciarFaturamento(java.util.HashMap<String,Object> parametros) {
+		AUTZOSDGCP gestCatPed  = new AUTZOSDGCP();	
+		AUTVF04 transFat = new AUTVF04();
+		AUTSAPAtualizacaoUsuarioRF userUpdateRF = new AUTSAPAtualizacaoUsuarioRF();
+		AUTSAPConferenciaPedido confPedido = new AUTSAPConferenciaPedido();
+		
+		autStartSAPECQDefault(parametros);
+		
+		gestCatPed.autIniciarGestaoCarteiraPedidos(parametros);		
+	}
+	
+	
+	/**
+	 * 
+	 * Faturamento ZOSD_GCP
+	 * 
+	 * @param parametros - Parametros de configuração do processo de negócio
+	 * 
+	 */
+	public void autConsultaItensOrdemVenda(java.util.HashMap<String,Object> parametros) {
+		AUTZOSDGCP gestCatPed  = new AUTZOSDGCP();	
+		
+		autStartSAPECQDefault(parametros);
+	
+		gestCatPed.autIniciarConsultasGCP(parametros);		
+	}
+
 	
 	public void autFaturarPedido(java.util.HashMap<String,Object> prm,IAUTSAPProcessExecution process) {
 		AUTZOSDGCP transPedido  = new AUTZOSDGCP();	

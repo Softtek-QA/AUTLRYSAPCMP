@@ -88,5 +88,6 @@
       <ObjectMapEntry id="TipoPedido" locator="//SapTextField[@automationId='usr/txtS_AUART-LOW']" />
     </ObjectMapEntry>
     <ObjectMapEntry id="ZOSDGCPBotaoExecutar" locator="//SapButton[@automationId='tbar[1]/btn[8]']" />
+    <ObjectMapEntry id="ZOSDGCPDetalhesItensPedido" locator="SAP.//SapGridView[@automationId='usr/cntlTREE_CONTAINER/shellcont/shell/shellcont[1]/shell/shellcont[1]/shell']" />
   </ObjectMapEntry>
 </ObjectMap>
