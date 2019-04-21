@@ -1,19 +1,20 @@
 <ObjectMap version="1">
-  <ObjectMapEntry id="SAPMenus" locator="/SapWindow[@automationId='/app/con[0]/ses[1]/wnd[0]']">
-    <ObjectMapEntry id="0001MenuOrdemTransporte" locator="//SapMenu[@automationId='mbar/menu[0]/menu[5]']" />
-    <ObjectMapEntry id="001SubMenu0001ConfirmarBackground" locator="//SapButton[@automationId='tbar[0]/btn[11]']" />
-    <ObjectMapEntry id="BotaoSalvar" locator="//SapButton[@automationId='tbar[1]/btn[6]']" />
-    <ObjectMapEntry id="CheckConfirmarOrdem" locator="//SapCheckBox[@automationId='usr/chkLTAP-PQUIT']" />
-    <ObjectMapEntry id="ConfirmacaoVisivel" locator="//SapMenu[@automationId='mbar/menu[0]/menu[4]']" />
-    <ObjectMapEntry id="IrPara" locator="//SapMenu[@caption='Ir para']" />
-    <ObjectMapEntry id="OrdemTransporte" locator="//SapMenu[@caption='Ordem de transporte']" />
-    <ObjectMapEntry id="Processar" locator="//SapMenu[@caption='Processar']" />
-    <ObjectMapEntry id="Sistemas" locator="//SapMenu[@caption='Sistema']" />
-    <ObjectMapEntry id="Suplementos" locator="//SapMenu[@caption='Suplementos']" />
-    <ObjectMapEntry id="VL03NBotaoEditarOT" locator="//SapButton[@caption='Exibir &lt;-&gt; Modificar   (Ctrl+F1)']" />
-    <ObjectMapEntry id="VL03NBotaoRegistrarSM" locator="//SapButton[@caption='Registrar SM']" />
-    <ObjectMapEntry id="wnd 1" locator="//SapWindow[@automationId='/app/con[0]/ses[1]/wnd[1]']">
-      <ObjectMapEntry id="btnSPOP-OPTION1" locator="//SapButton[@automationId='usr/btnSPOP-OPTION1']" />
+  <ObjectMapEntry id="SAPMenus" locator="/SapWindow[@automationId=&apos;/app/con[0]/ses[1]/wnd[0]&apos;]">
+    <ObjectMapEntry id="0001MenuOrdemTransporte" locator="//SapMenu[@automationId=&apos;mbar/menu[0]/menu[5]&apos;]"/>
+    <ObjectMapEntry id="001SubMenu0001ConfirmarBackground" locator="//SapButton[@automationId=&apos;tbar[0]/btn[11]&apos;]"/>
+    <ObjectMapEntry id="BotaoSalvar" locator="//SapButton[@automationId=&apos;tbar[1]/btn[6]&apos;]"/>
+    <ObjectMapEntry id="CheckConfirmarOrdem" locator="//SapCheckBox[@automationId=&apos;usr/chkLTAP-PQUIT&apos;]"/>
+    <ObjectMapEntry id="ConfirmacaoVisivel" locator="//SapMenu[@automationId=&apos;mbar/menu[0]/menu[4]&apos;]"/>
+    <ObjectMapEntry id="IrPara" locator="//SapMenu[@caption=&apos;Ir para&apos;]"/>
+    <ObjectMapEntry id="menu 0" locator="//SapMenu[@automationId=&apos;mbar/menu[1]/menu[4]/menu[0]&apos;]"/>
+    <ObjectMapEntry id="OrdemTransporte" locator="//SapMenu[@caption=&apos;Ordem de transporte&apos;]"/>
+    <ObjectMapEntry id="Processar" locator="//SapMenu[@caption=&apos;Processar&apos;]"/>
+    <ObjectMapEntry id="Sistemas" locator="//SapMenu[@caption=&apos;Sistema&apos;]"/>
+    <ObjectMapEntry id="Suplementos" locator="//SapMenu[@caption=&apos;Suplementos&apos;]"/>
+    <ObjectMapEntry id="VL03NBotaoEditarOT" locator="//SapButton[@caption=&apos;Exibir &lt;-&gt; Modificar   (Ctrl+F1)&apos;]"/>
+    <ObjectMapEntry id="VL03NBotaoRegistrarSM" locator="//SapButton[@caption=&apos;Registrar SM&apos;]"/>
+    <ObjectMapEntry id="wnd 1" locator="//SapWindow[@automationId=&apos;/app/con[0]/ses[1]/wnd[1]&apos;]">
+      <ObjectMapEntry id="btnSPOP-OPTION1" locator="//SapButton[@automationId=&apos;usr/btnSPOP-OPTION1&apos;]"/>
     </ObjectMapEntry>
   </ObjectMapEntry>
 </ObjectMap>
