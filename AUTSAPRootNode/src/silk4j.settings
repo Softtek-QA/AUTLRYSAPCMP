@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<recorderProject version="18.5">
+<recorderProject version="19.5">
   <applicationConfiguration>
     <moduleNamePattern>*\saplogon.exe</moduleNamePattern>
     <baseStateInfo>
@@ -10,20 +10,20 @@
   </applicationConfiguration>
   <agentOptions>
     <entry>
-      <string>OPT_WPF_CUSTOM_CLASSES</string>
-      <list/>
-    </entry>
-    <entry>
-      <string>OPT_TRUELOG_SCREENSHOT_MODE</string>
-      <int>2</int>
-    </entry>
-    <entry>
       <string>OPT_ASSET_NAMESPACE</string>
       <string>AUTSAPRootNode</string>
     </entry>
     <entry>
       <string>OPT_SHOW_PLAYBACK_STATUS_DIALOG</string>
       <boolean>false</boolean>
+    </entry>
+    <entry>
+      <string>OPT_TRUELOG_SCREENSHOT_MODE</string>
+      <int>2</int>
+    </entry>
+    <entry>
+      <string>OPT_WPF_CUSTOM_CLASSES</string>
+      <list/>
     </entry>
   </agentOptions>
 </recorderProject>

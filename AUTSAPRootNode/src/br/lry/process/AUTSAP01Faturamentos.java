@@ -53,6 +53,7 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 		autStartSAPECQDefault(parametros);
 		
 		gestCatPed.autIniciarGestaoCarteiraPedidos(parametros);		
+		
 	}
 	
 	

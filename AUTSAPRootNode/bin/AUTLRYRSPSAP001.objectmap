@@ -1,8 +1,11 @@
 <ObjectMap version="1">
-  <ObjectMapEntry id="SAPConnections" locator="/Window[@caption='SAP Logon 730']">
-    <ObjectMapEntry id="ItensConfiguracao" locator="//Control[@caption=&quot;SAP's Advanced Treelist&quot;]" />
-    <ObjectMapEntry id="ListaConexoes" locator="//ListView" />
-    <ObjectMapEntry id="Logon" locator="//PushButton[@caption='Logon']" />
-    <ObjectMapEntry id="SAP s Advanced Treelist" locator="//Control[@caption=&quot;SAP's Advanced Treelist&quot;]" />
+  <ObjectMapEntry id="SAPConnections" locator="/Window[@caption=&apos;SAP Logon 730&apos;]">
+    <ObjectMapEntry id="ItensConfiguracao" locator="//Control[@caption=&quot;SAP&apos;s Advanced Treelist&quot;]"/>
+    <ObjectMapEntry id="ListaConexoes" locator="//ListView"/>
+    <ObjectMapEntry id="Logon" locator="//PushButton[@caption=&apos;Logon&apos;]"/>
+    <ObjectMapEntry id="SAP s Advanced Treelist" locator="//Control[@caption=&quot;SAP&apos;s Advanced Treelist&quot;]"/>
+    <ObjectMapEntry id="Servidor ocupado" locator="//Dialog[@caption=&apos;Servidor ocupado&apos;]">
+      <ObjectMapEntry id="Alternar para" locator="//PushButton[@caption=&apos;Alternar para...&apos;]"/>
+    </ObjectMapEntry>
   </ObjectMapEntry>
 </ObjectMap>

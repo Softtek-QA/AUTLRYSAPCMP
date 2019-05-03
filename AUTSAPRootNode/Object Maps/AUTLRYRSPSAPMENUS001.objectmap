@@ -8,9 +8,14 @@
     <ObjectMapEntry id="IrPara" locator="//SapMenu[@caption=&apos;Ir para&apos;]"/>
     <ObjectMapEntry id="menu 0" locator="//SapMenu[@automationId=&apos;mbar/menu[1]/menu[4]/menu[0]&apos;]"/>
     <ObjectMapEntry id="OrdemTransporte" locator="//SapMenu[@caption=&apos;Ordem de transporte&apos;]"/>
-    <ObjectMapEntry id="Processar" locator="//SapMenu[@caption=&apos;Processar&apos;]"/>
+    <ObjectMapEntry id="Processar" locator="//SapMenu[@caption=&apos;Processar&apos;]">
+      <ObjectMapEntry id="ConfirmarPicking" locator="//SapMenu[@caption=&apos;Confirmar ordem de picking&apos;]">
+        <ObjectMapEntry id="TodosItens" locator="//SapMenu[@caption=&apos;Todos os itens&apos;]"/>
+      </ObjectMapEntry>
+    </ObjectMapEntry>
     <ObjectMapEntry id="Sistemas" locator="//SapMenu[@caption=&apos;Sistema&apos;]"/>
     <ObjectMapEntry id="Suplementos" locator="//SapMenu[@caption=&apos;Suplementos&apos;]"/>
+    <ObjectMapEntry id="txtRV50A-TXTWE" locator="//SapTextField[@automationId=&apos;usr/subSUBSCREEN_HEADER:SAPMV50A:1502/txtRV50A-TXTWE&apos;]"/>
     <ObjectMapEntry id="VL03NBotaoEditarOT" locator="//SapButton[@caption=&apos;Exibir &lt;-&gt; Modificar   (Ctrl+F1)&apos;]"/>
     <ObjectMapEntry id="VL03NBotaoRegistrarSM" locator="//SapButton[@caption=&apos;Registrar SM&apos;]"/>
     <ObjectMapEntry id="wnd 1" locator="//SapWindow[@automationId=&apos;/app/con[0]/ses[1]/wnd[1]&apos;]">
