@@ -3,6 +3,14 @@
     <ObjectMapEntry id="BarraStatus" locator="//SapStatusbar[@automationId='sbar']" />
     <ObjectMapEntry id="Executar" locator="//SapButton[@automationId='tbar[0]/btn[0]']" />
     <ObjectMapEntry id="InputTransacao" locator="//SapOkCodeField[@automationId='tbar[0]/okcd']" />
+    <ObjectMapEntry id="LM01" locator="//SapUserArea[@automationId='usr']">
+      <ObjectMapEntry id="BotaoSim" locator="//SapButton[@automationId='usr/btnWA_1999-BOTOES-PB1-LABEL']" />
+      <ObjectMapEntry id="NumItemDe" locator="//SapTextField[@automationId='usr/txtWA_9001-MATNR']" />
+      <ObjectMapEntry id="NumItemPara" locator="//SapTextField[@automationId='usr/txtWA_9001-EAN11']" />
+      <ObjectMapEntry id="NumPedido" locator="//SapTextField[@automationId='usr/txtWA_9000-VBELN']" />
+      <ObjectMapEntry id="QdeDe" locator="//SapTextField[@automationId='usr/txtWA_9001-QTDADE']" />
+      <ObjectMapEntry id="QdePara" locator="//SapTextField[@automationId='usr/txtWA_9001-QTDADE_CONF']" />
+    </ObjectMapEntry>
     <ObjectMapEntry id="LM01ProcessarSM" locator="//SapButton[@automationId='usr/btnTEXT2']" />
     <ObjectMapEntry id="LM01SaidaMercadoria" locator="//SapButton[@automationId='usr/btnTEXT1']" />
     <ObjectMapEntry id="LM01SaidaMercOT" locator="//SapButton[@automationId='usr/btnTEXT4']" />

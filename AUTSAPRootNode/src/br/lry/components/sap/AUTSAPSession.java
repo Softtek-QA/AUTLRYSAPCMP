@@ -24,8 +24,8 @@ import com.borland.silktest.jtf.PushButton;
 import com.borland.silktest.jtf.Window;
 
 public class AUTSAPSession extends AUTSAPBaseComponent{
-	String usuario = "51028487";
-	String senha = "Auto5@2020";
+	String usuario = "51024057";
+	String senha = "fielpalavradeus";
 
 	public void autSyncStateProcessExecution() {
 		if(autGetExecutionMonitor()!=null) {
@@ -85,10 +85,17 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 	}
 
 
-	public void autInitSAPApp() {				
-		AUT_AGENT_SILK4J.<Control>find("SAPConnections.ItensConfiguracao").textClick("Conexões");
-		AUT_AGENT_SILK4J.<ListView>find("SAPConnections.ListaConexoes").select("LEROY-ECQ");
-		AUT_AGENT_SILK4J.<PushButton>find("SAPConnections.Logon").click();				
+	public void autInitSAPApp() {
+
+//		AUT_AGENT_SILK4J.<Control>find("SAPConnections.ItensConfiguracao").textClick("Conexões");
+		AUT_AGENT_SILK4J.<ListView>find("SAPConnections.ListaConexoes").select("ECC - EQ2");
+		AUT_AGENT_SILK4J.<PushButton>find("SAPConnections.Logon").click();
+
+		//start recording 
+		//AUT_AGENT_SILK4J.<Control>find("SAPConnections.ItensConfiguracao").textClick("Conexões");
+		//AUT_AGENT_SILK4J.<ListView>find("SAPConnections.ListaConexoes").textClick("ECC - EQ2", 1, ClickType.LEFTDOUBLE);
+		//AUT_AGENT_SILK4J.<PushButton>find("SAPConnections.Logon").click();
+		//end recording
 	}
 
 
@@ -146,10 +153,16 @@ public class AUTSAPSession extends AUTSAPBaseComponent{
 		
 	}
 
+	public void autStartSAPECQDefault(String usuario, String senha) {
+		baseState();
+		autInitSAPApp();
+		autStartLogin(usuario, senha);
+	}
+	
 	public void autStartSAPECQDefault() {
 		baseState();
 		autInitSAPApp();
-		autStartLoginDefault();
+		autStartLogin(usuario, senha);
 	}
 
 	public void autSAPLogout() {

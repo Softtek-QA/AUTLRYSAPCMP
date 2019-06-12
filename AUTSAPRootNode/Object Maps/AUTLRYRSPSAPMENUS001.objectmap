@@ -3,6 +3,7 @@
     <ObjectMapEntry id="0001MenuOrdemTransporte" locator="//SapMenu[@automationId='mbar/menu[0]/menu[5]']" />
     <ObjectMapEntry id="001SubMenu0001ConfirmarBackground" locator="//SapButton[@automationId='tbar[0]/btn[11]']" />
     <ObjectMapEntry id="BotaoSalvar" locator="//SapButton[@automationId='tbar[1]/btn[6]']" />
+    <ObjectMapEntry id="BotaoVoltar" locator="//SapButton[@automationId='tbar[0]/btn[3]']" />
     <ObjectMapEntry id="CheckConfirmarOrdem" locator="//SapCheckBox[@automationId='usr/chkLTAP-PQUIT']" />
     <ObjectMapEntry id="ConfirmacaoVisivel" locator="//SapMenu[@automationId='mbar/menu[0]/menu[4]']" />
     <ObjectMapEntry id="IrPara" locator="//SapMenu[@caption='Ir para']" />
