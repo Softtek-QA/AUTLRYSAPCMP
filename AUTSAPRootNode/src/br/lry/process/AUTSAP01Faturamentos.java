@@ -158,10 +158,10 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 
 	public void autConfirmaOTVisivel() {
 		String numDocSD;
-		
-		Integer totRows = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getRowCount();
+
 		autSelectMenuItem(AUT_ZOSD_GCP_MENU_LATERAL.ORDEM_DE_TRANSPORTE);
-	
+		Integer totRows = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getRowCount();
+
 		for(Integer row = 0;row < totRows;row++) {
 			String confirmacao = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(row, "KQUIT");
 			String ot = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(row, "TANUM");			
