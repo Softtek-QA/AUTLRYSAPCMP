@@ -159,8 +159,8 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 	public void autConfirmaOTVisivel() {
 		String numDocSD;
 		
-		Integer totRows = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getRowCount();
 		autSelectMenuItem(AUT_ZOSD_GCP_MENU_LATERAL.ORDEM_DE_TRANSPORTE);
+		Integer totRows = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getRowCount();
 	
 		for(Integer row = 0;row < totRows;row++) {
 			String confirmacao = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(row, "KQUIT");
@@ -213,6 +213,7 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 		try {
 			
 			String confirmacao;
+			String statusSefaz;
 			
 			com.borland.silktest.jtf.Utils.sleep(20 * 1000);
 			AUT_AGENT_SILK4J.<SapTree>find("SAP.ZOSDGCP.MenusLaterais").selectItem("REFRESH", "1");
@@ -228,8 +229,26 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 			Assert.assertTrue(confirmacao.equals("C"));
 			
 			confirmacao = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(0, "FKSTK");		
-			Assert.assertTrue(confirmacao.equals("C"));			
+			Assert.assertTrue(confirmacao.equals("C"));		
 
+			autSelectMenuItem(AUT_ZOSD_GCP_MENU_LATERAL.FATURAMENTO);
+			
+			//Aguarda retorno da SEFAZ
+			for (int x=1;x<=10;x++) {
+
+				statusSefaz = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(0, "DOCSTAT");
+				
+				if(statusSefaz.equals("")) {
+					com.borland.silktest.jtf.Utils.sleep(30000);
+					AUT_AGENT_SILK4J.<SapTree>find("SAP.ZOSDGCP.MenusLaterais").selectItem("REFRESH", "1");
+					AUT_AGENT_SILK4J.<SapTree>find("SAP.ZOSDGCP.MenusLaterais").ensureVisibleHorizontalItem("REFRESH", "1");
+					AUT_AGENT_SILK4J.<SapTree>find("SAP.ZOSDGCP.MenusLaterais").doubleSelectItem("REFRESH", "1");
+				} else {
+					Assert.assertTrue(statusSefaz.equals("1"));	
+					x=11;
+				}	
+			}
+			
 			return true;
 		
 		} catch (java.lang.Exception e) {
