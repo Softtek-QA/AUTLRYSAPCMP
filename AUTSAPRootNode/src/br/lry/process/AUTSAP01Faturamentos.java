@@ -158,18 +158,9 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 
 	public void autConfirmaOTVisivel() {
 		String numDocSD;
-<<<<<<< HEAD
-
-=======
-		
->>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYSAPCMP.git
 		autSelectMenuItem(AUT_ZOSD_GCP_MENU_LATERAL.ORDEM_DE_TRANSPORTE);
 		Integer totRows = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getRowCount();
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYSAPCMP.git
 		for(Integer row = 0;row < totRows;row++) {
 			String confirmacao = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(row, "KQUIT");
 			String ot = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(row, "TANUM");			
@@ -242,7 +233,7 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 			autSelectMenuItem(AUT_ZOSD_GCP_MENU_LATERAL.FATURAMENTO);
 			
 			//Aguarda retorno da SEFAZ
-			for (int x=1;x<=10;x++) {
+			for (int x=1;x<=20;x++) {
 
 				statusSefaz = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(0, "DOCSTAT");
 				
