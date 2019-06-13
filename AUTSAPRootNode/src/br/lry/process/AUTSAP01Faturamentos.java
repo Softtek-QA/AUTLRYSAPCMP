@@ -244,7 +244,7 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 					AUT_AGENT_SILK4J.<SapTree>find("SAP.ZOSDGCP.MenusLaterais").doubleSelectItem("REFRESH", "1");
 				} else {
 					Assert.assertTrue(statusSefaz.equals("1"));	
-					x=11;
+					x=21;
 				}	
 			}
 			
