@@ -233,7 +233,7 @@ public class AUTSAP01Faturamentos extends AUTSAPSession {
 			autSelectMenuItem(AUT_ZOSD_GCP_MENU_LATERAL.FATURAMENTO);
 			
 			//Aguarda retorno da SEFAZ
-			for (int x=1;x<=20;x++) {
+			for (int x=1;x<=25;x++) {
 
 				statusSefaz = AUT_AGENT_SILK4J.<SapGridView>find("SAP.ZOSDGCP.TabelasRegistros").getCellValue(0, "DOCSTAT");
 				
